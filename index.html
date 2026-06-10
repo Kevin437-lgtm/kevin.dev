@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Mathu | Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">Kevin<span>.</span>Dev</a>
+            <div class="nav-links">
+                <a href="#work">Architecture & Apps</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Hi, I'm <span>Kevin Mathu.</span></h1>
+            <h2 class="hero-subtitle">Simplifying day-to-day tasks using simple software.</h2>
+            <p class="hero-bio">
+                I'm a 20-year-old developer currently in my third year studying Mathematics and Computer Science at Mama Ngina University. I build practical, high-performance applications that solve real-world logistical and operational problems.
+            </p>
+            <div class="hero-cta">
+                <a href="#work" class="btn btn-primary">View My Apps</a>
+                <a href="#" class="btn btn-outline" onclick="alert('Resume download triggered. (Placeholder)')">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="container">
+        <h2 class="section-title">Selected Projects</h2>
+
+        <article class="project-card">
+            <div class="project-info">
+                <h3>Auto Spares Enterprise Application</h3>
+                <span class="project-tagline">Offline-first POS & Inventory Management</span>
+                <p class="project-desc">
+                    An enterprise-grade tablet application designed for auto spare shops with rigid staff accountability, instant local saves, and cloud syncing.
+                </p>
+
+                <div class="case-study">
+                    <h4>Architecture Breakdown</h4>
+                    
+                    <details>
+                        <summary>Phase 1: Authentication</summary>
+                        <div class="details-content">
+                            Features a custom secure numpad. Master Admins use a master code to provision staff and generate OTPs. New hires use OTPs to set private PINs. Sessions track user actions for strict accountability.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Phase 2: Role-Based Routing</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Cashiers:</strong> Access Point of Sale, build digital carts, send pending orders to the warehouse, handle checkout (Cash/M-Pesa/Credit), and manage the ledger.</li>
+                                <li><strong>Store/Warehouse:</strong> View live active tasks, pick items, and notify the counter when ready.</li>
+                                <li><strong>Executive Owner:</strong> Full register access plus macro analytics (Revenue, M-Pesa/Cash splits, and critical low-stock alerts).</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Phase 3: The Unseen Data Engine</summary>
+                        <div class="details-content">
+                            Built on an offline-first architecture. Uses Isar database for instant UI reaction (zero loading spinners). A background SyncQueue pushes JSON receipts to Firebase every 3 minutes. Network resilient—stores receipts safely if Wi-Fi drops.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <aside class="try-it-out">
+                <h4>Try It Out</h4>
+                <div class="qr-placeholder">
+                    [ QR Code Space ]<br>Scan to Install
+                </div>
+                <button class="btn btn-primary" onclick="alert('Downloading Auto Spares APK...')">Download Android APK</button>
+            </aside>
+        </article>
+
+        <article class="project-card">
+            <div class="project-info">
+                <h3>Matatu Tracker</h3>
+                <span class="project-tagline">Real-Time Urban Transit Telemetry</span>
+                <p class="project-desc">
+                    A low-latency telemetry network for Kenyan transit. It drops transactional booking entirely to focus purely on linking commuter demand with driver locations.
+                </p>
+
+                <div class="case-study">
+                    <h4>Architecture Breakdown</h4>
+                    
+                    <details>
+                        <summary>Phase 1: Hardware-Accelerated Init</summary>
+                        <div class="details-content">
+                            Fast Google Sign-In, instant GPS hardware handshake, and a Google Map canvas that loads in milliseconds, centering on the user.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Phase 2: Route Snapping</summary>
+                        <div class="details-content">
+                            Users select corridors (e.g., CBD to Thika Superhighway). The app queries Firestore for stage coordinates and Google Directions API to unpack a polyline string, rendering a sharp path that hugs the actual road lanes.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Phase 3: Commuter View</summary>
+                        <div class="details-content">
+                            Streams active fleet vehicles. Custom markers physically rotate to match the driver's trajectory vector. Tapping a stage compares vehicle coordinates against the road polyline for exact ETAs.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Phase 4: Driver/SACCO View</summary>
+                        <div class="details-content">
+                            Passive demand mapping. Passengers opening the app create anonymous heatmaps. Drivers see visual indicator rings at upcoming stages (e.g., Roysambu, Githurai) to optimize pacing and capture demand.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Phase 5: Cloud Sync Loop</summary>
+                        <div class="details-content">
+                            Zero-friction payloads update telemetry continuously, allowing driver and passenger interfaces to sync with near-zero lag.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <aside class="try-it-out">
+                <h4>Try It Out</h4>
+                <div class="iframe-placeholder">
+                    [ Web Build Embedded IFrame Space ]
+                </div>
+                <button class="btn btn-outline" onclick="alert('Launching App Simulator...')">Simulate App</button>
+                <button class="btn btn-primary" onclick="alert('Downloading Matatu Tracker APK...')">Download APK</button>
+            </aside>
+        </article>
+
+    </section>
+
+    <section id="contact">
+        <div class="container contact-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="color: var(--text-muted);">Interested in working together or want to discuss architecture? Drop me a message.</p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/Kevin437-lgtm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <p>Built by Kevin Mathu. © 2026.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
